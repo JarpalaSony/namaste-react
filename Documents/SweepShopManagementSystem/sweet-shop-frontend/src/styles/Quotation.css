@@ -1,0 +1,26 @@
+.quotation-section {
+  text-align: center;
+  margin: 4rem 1rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #6f42c1;
+  position: relative;
+}
+
+.quotation-section::before {
+  content: "❝";
+  font-size: 3rem;
+  position: absolute;
+  left: -30px;
+  top: -10px;
+  color: #ff6f61;
+  opacity: 0.2;
+}
+
+.quotation-section cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ff6f61;
+  font-weight: 600;
+}
