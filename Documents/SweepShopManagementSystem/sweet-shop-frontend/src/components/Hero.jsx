@@ -29,7 +29,7 @@ export default function Hero({ title, subtitle, buttonText, buttonLink }) {
       <div className="hero-container">
         <div className="hero-text">
           <h1>{title} 🍬</h1>
-          <p>{subtitle}</p>
+          <p> <Quotation text={currentQuote.text} author={currentQuote.author}/></p>
           <Link to={buttonLink} className="hero-btn">
             {buttonText}
           </Link>
@@ -40,9 +40,6 @@ export default function Hero({ title, subtitle, buttonText, buttonLink }) {
       </div>
       
     </section>
-     <div className="hero-quote">
-         <Quotation text={currentQuote.text} author={currentQuote.author}/>
-      </div>
     </>
   );
 }

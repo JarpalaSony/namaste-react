@@ -1,13 +1,16 @@
 import Hero from "../components/Hero";
 import SweetCard from "../components/SweetCard";
 import "../styles/Home.css";
-
+import cool_icecream from "../assets/cool_icecream.jpg";
+import lollipop from "../assets/macarons.jpg";
+import straberry_cupcake from "../assets/straberry_cupcake.png";
+import macarons from "../assets/macarons.jpg";
 export default function HomePage() {
   const sweets = [
-    { name: "Chocolate Fudge", price: 5, image: "/assets/chocolate-fudge.jpg" },
-    { name: "Strawberry Cupcake", price: 3, image: "/assets/strawberry-cupcake.jpg" },
-    { name: "Lollipop", price: 1, image: "/assets/lollipop.jpg" },
-    { name: "Macaron", price: 2, image: "/assets/macaron.jpg" },
+    { name: "Chocolate Fudge", price: 5, image: cool_icecream },
+    { name: "Strawberry Cupcake", price: 3, image: straberry_cupcake },
+    { name: "Lollipop", price: 1, image: lollipop },
+    { name: "Macaron", price: 2, image: macarons },
   ];
 
   return (

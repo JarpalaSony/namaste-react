@@ -6,7 +6,6 @@ export default function Quotation({ text, author }) {
     <section className="quotation-section">
       <blockquote>
         "{text}"
-        <cite> - {author}</cite>
       </blockquote>
     </section>
   );
