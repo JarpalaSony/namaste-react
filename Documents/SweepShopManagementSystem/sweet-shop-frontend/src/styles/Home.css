@@ -1,0 +1,66 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff0f6, #fffbe6);
+  padding: 2rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #d6336c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home-tagline {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+}
+
+.home-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-primary {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, #ff6b81, #ffd166);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  background: white;
+  color: #d6336c;
+  font-weight: bold;
+  border: 2px solid #ff6b81;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-secondary:hover {
+  background: #fff0f6;
+  transform: scale(1.05);
+}
+
+.candy-icons {
+  margin-top: 3rem;
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+}
