@@ -2,9 +2,10 @@ import Hero from "../components/Hero";
 import SweetCard from "../components/SweetCard";
 import "../styles/Home.css";
 import cool_icecream from "../assets/cool_icecream.jpg";
-import lollipop from "../assets/macarons.jpg";
+import lollipop from "../assets/lollipop.jpg";
 import straberry_cupcake from "../assets/straberry_cupcake.png";
 import macarons from "../assets/macarons.jpg";
+import Footer from "../components/Footer";
 export default function HomePage() {
   const sweets = [
     { name: "Chocolate Fudge", price: 5, image: cool_icecream },
@@ -35,6 +36,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }
