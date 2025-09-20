@@ -5,7 +5,8 @@ import Login from './auth/SignIn';
 import Register from './auth/Register';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-
+import Sweet from "./pages/Sweets";
+import SweetGrid from './components/SweetGrid';
 function App() {
   return (
     <AuthProvider>  {/* ✅ Wrap entire app */}
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/sweets" element={<Sweet/>}/>
         </Routes>
       </div>
     </AuthProvider>
