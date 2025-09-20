@@ -51,7 +51,25 @@ const handleSignOut = () => {
             </>
           ) : (<>
             <span>Welcome, {user.name}</span>
-            <button onClick={handleSignOut} className="logout-btn">Sign Out</button>
+            <button
+                 onClick={handleSignOut}
+                 style={{
+                          backgroundColor: "#e63946",   // red
+                          color: "#fff",                // white text
+                          border: "none",
+                          padding: "8px 16px",
+                          borderRadius: "6px",
+                          cursor: "pointer",
+                          fontWeight: "bold",
+                          fontSize: "14px",
+                          transition: "background 0.3s ease"
+                       }}
+                     onMouseOver={(e) => (e.target.style.backgroundColor = "#d62828")}
+                    onMouseOut={(e) => (e.target.style.backgroundColor = "#e63946")}
+              >
+                       Sign Out
+            </button>
+
             </>
           )}
         </div>
