@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Sweet from "./pages/Sweets";
 import SweetGrid from './components/SweetGrid';
+import AddSweetForm from './pages/AddSweetForm';
 function App() {
   return (
     <AuthProvider>  {/* ✅ Wrap entire app */}
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/sweets" element={<Sweet/>}/>
+          <Route path="/add-sweet" element={<AddSweetForm/>}/>
         </Routes>
       </div>
     </AuthProvider>
