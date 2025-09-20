@@ -19,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/sweets" element={<Sweet/>}/>
           <Route path="/add-sweet" element={<AddSweetForm/>}/>
+          <Route path="/edit-sweet/:id" element={<AddSweetForm />} />
         </Routes>
       </div>
     </AuthProvider>

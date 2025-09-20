@@ -1,0 +1,61 @@
+
+
+.sweets-container {
+  max-width: 1200px;
+   margin: 50px auto 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sweets-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d35400;
+}
+
+.add-sweet-btn {
+  background: #e67e22;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.add-sweet-btn:hover {
+  background: #d35400;
+}
+
+/* Responsive sweets grid */
+.sweets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Empty state */
+.sweets-grid p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+/* Optional: global loading style */
+.loading,
+.error {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #555;
+}
