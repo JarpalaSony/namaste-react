@@ -1,13 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Login from './auth/SignIn';
+import Register from './auth/Register';
+import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Home/>
-    </div>
+    <AuthProvider>  {/* ✅ Wrap entire app */}
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 }
 
