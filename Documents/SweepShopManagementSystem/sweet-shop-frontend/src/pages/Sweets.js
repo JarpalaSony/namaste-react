@@ -16,19 +16,62 @@ const sweetsData = [
 ];
 
 export default function Sweets() {
-  const {user}=useContext(AuthContext);
+  const {user,loading}=useContext(AuthContext);
   const navigate=useNavigate();
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    price: "",
+    quantity: "",
+  });
+
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
+  if (!loading && !user) {
+    navigate("/login");
+  }
+}, [user, loading, navigate]);
+if (loading) {
+  return <div>Loading...</div>; // Or spinner
+}
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/sweets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // If you use JWT auth, include it:
+          // "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add sweet");
+      }
+
+      const data = await response.json();
+      console.log("✅ Sweet added:", data);
+
+      // reset form
+      setFormData({ name: "", category: "", price: "", quantity: "" });
+      setShowForm(false);
+    } catch (err) {
+      console.error("❌ Error adding sweet:", err);
     }
-  }, [user, navigate]);
+  };
 
   return (
     <div className="sweets-container">
       <div className="header">
             <h1 className="sweets-title">🍬 Our Delicious Sweets 🍬</h1>{
-              user?.role==="admin" &&(<button className="add-sweet-btn">➕ Add Sweet</button>)
+              user?.role==="admin" &&(<button className="add-sweet-btn" onClick={() => setShowForm(!showForm)}>➕ Add Sweet</button>)
             }
             
       </div>
@@ -44,6 +87,47 @@ export default function Sweets() {
           />
         ))}
       </div>
+      {showForm && (
+        <form className="add-sweet-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Sweet Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            value={formData.category}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            value={formData.price}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            value={formData.quantity}
+            onChange={handleChange}
+            required
+          />
+
+          <button type="submit">✅ Save Sweet</button>
+        </form>
+      )}
     </div>
   );
 }
