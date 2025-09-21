@@ -6,7 +6,6 @@ import Register from './auth/Register';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Sweet from "./pages/Sweets";
-import SweetGrid from './components/SweetGrid';
 import AddSweetForm from './pages/AddSweetForm';
 function App() {
   return (
