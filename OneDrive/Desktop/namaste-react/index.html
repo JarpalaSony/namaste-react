@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div> 
+        DIv On top of root
+    </div>
+    <div id="root">
+        React Through CDN
+        <h1>I am Sony</h1>
+         <h1>I am Sony</h1>
+          <h1>I am Sony</h1>
+           <h1>I am Sony</h1>
+            <h1>I am Sony</h1>
+    </div>
+    <div>
+        div below root
+    </div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script>
+    const heading=React.createElement("h1",{},"Hello World from React!");
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    let para=React.createElement("p",{},"హలో స్నేహితా (Hello friend)")
+    let wrapper=React.createElement("div",{},[heading,para])
+    root.render(wrapper);
+</script>
+</body>
+</html>
